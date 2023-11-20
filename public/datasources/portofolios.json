@@ -1,0 +1,24 @@
+{
+    "status": 200,
+    "message": "List of Technology",
+    "data": [
+        {
+            "id": 1,
+            "name": "Personal Website",
+            "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, quasi.",
+            "image": "/assets/images/porto.png",
+            "technology": [
+                {
+                    "id": 1,
+                    "name": "Laravel",
+                    "image": "/assets/images/laravel.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Javascript",
+                    "image": "/assets/images/js.png"
+                }
+            ]
+        }
+    ]
+}
