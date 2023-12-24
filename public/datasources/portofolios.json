@@ -5,6 +5,7 @@
         {
             "id": 1,
             "name": "Personal Website",
+            "slug": "personal-website",
             "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, quasi.",
             "image": "/assets/images/porto.png",
             "technology": [

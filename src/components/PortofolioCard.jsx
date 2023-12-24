@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 const PortofolioCard = (props) => {
     return ( 
-        <div id={props.id} className="bg-[#323443] overflow-hidden rounded-xl">
+        
+        <Link to={'/portofolio/'+props.slug} id={props.id} className="bg-[#323443] overflow-hidden rounded-xl">
             <img src={props.image} alt="" />
             <div className="px-10 py-6 text-white">
                 <p className=" text-xl font-bold mb-2">{props.name}</p>
@@ -14,7 +17,7 @@ const PortofolioCard = (props) => {
                     })}
                 </div>
             </div>
-        </div>
+        </Link>
      );
 }
  

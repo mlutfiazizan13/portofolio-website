@@ -17,3 +17,16 @@ export const getPortofolios = async () => {
         throw error;
     }
 }
+
+export const getPortofoliosBySlug = async (slug) => {
+    try {
+        const response = await axios.get("/datasources/portofolios.json");
+        const data = response.data.data;
+        // return data;
+        return  data.filter(function (el) {
+            return el.slug == slug;
+        })[0];
+    } catch (error) {
+        throw error;
+    }
+}
