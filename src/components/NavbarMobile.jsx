@@ -17,7 +17,6 @@ const NavbarMobile = () => {
         <>
             <div className="fixed lg:hidden top-0 z-10 w-full bg-white">
                 <div className='flex items-center justify-between text-black px-5 sm:px-14 py-7'>
-
                     <div className='flex items-centerlg:py-0 lg:border-b-0'>
                         <Link to="/">
                             <p className="text-4xl font-bold">Lutfi°</p>

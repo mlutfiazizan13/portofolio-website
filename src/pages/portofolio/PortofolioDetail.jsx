@@ -7,6 +7,7 @@ const PortofolioDetail = () => {
     let { name } = useParams();
 
     const [data, setData] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
     async function fetchData(){
         try {
@@ -14,6 +15,7 @@ const PortofolioDetail = () => {
             // console.log(result.data.data[0].technology);
             console.log(result);
             setData(result);
+            setLoading(false);
         } catch (error) {
             console.log('Error fetching data:', error);
         }
@@ -27,7 +29,11 @@ const PortofolioDetail = () => {
     return ( 
         
         <>
-            {data ? (
+            {isLoading ? (
+                <div className="px-5 sm:px-14 xl:px-32 pb-10 pt-36"> 
+                    <p className="text-3xl text-white">Loading</p>
+                </div>
+            ) : (
                 <div className="px-5 sm:px-14 xl:px-32 pb-10 pt-36"> 
                     <div className="mb-10 md:mb-20 text-white">
                         <p className="text-4xl font-bold pb-3">{data.name}</p>
@@ -41,11 +47,8 @@ const PortofolioDetail = () => {
                         </div>
                     </div>
                 </div>
-            ) : (
                 
-                <div className="px-5 sm:px-14 xl:px-32 pb-10 pt-36"> 
-                    <p>Loading</p>
-                </div>
+              
             )}
         </>
      );

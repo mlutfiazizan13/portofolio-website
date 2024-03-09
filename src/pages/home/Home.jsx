@@ -19,13 +19,13 @@ class Home extends Component {
                 <div className="h-screen md:h-[700px] lg:h-full bg-[#272727] relative">
                     <div className="lg:grid lg:grid-cols-2 lg:relative">
 
-                        <div className="text-white px-5 sm:px-14 xl:px-32">
+                        <div className="text-white px-5 h-[500px] sm:px-14 xl:px-32">
                             <div className="absolute top-1/2 transform -translate-y-1/2">
                                 <p className="text-7xl font-bold">Hello!</p>
                                 <p className="text-7xl font-bold">I'm Muhamad Lutfi Azizan</p>
                                 
                                 <div className="mt-3">
-                                    <p>I’am freelance web developer based in Indonesia <br /> who loves to craft attractive design <br /> experiences for the web.</p>
+                                    <p>I’am a fulltime web developer based in Indonesia <br /> who loves to craft attractive design <br /> experiences for the web.</p>
                                     <div className="flex gap-4 mt-3 font-bold">
                                         <a href="-" className="px-5 py-2 bg-white text-[#272727]">Email Me</a>
                                         <a href="-" className="px-5 py-2"> <FontAwesomeIcon className="mr-2" icon={faDownload} /> Download CV</a>
@@ -34,7 +34,7 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="hidden lg:block">
-                            <img className="h-full w-full" src={PersonalImg} alt="" />
+                            {/* <img className="h-full w-full" src={PersonalImg} alt="" /> */}
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ class Home extends Component {
                             <div className="absolute bg-white w-28 h-1 -right-10"></div>
                         </div>
                         <div className="text-justify text-lg">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos at vitae minus consequatur blanditiis voluptatibus tenetur delectus ut dolorem quasi?
+                            I specialized website and native android development
                         </div>
                     </div>
 

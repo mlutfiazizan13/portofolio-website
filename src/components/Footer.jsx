@@ -23,9 +23,9 @@ class Footer extends Component {
                                     </div>
                                 </div>
                                 <div className='flex justify-center gap-7 mt-10'>
-                                    <FontAwesomeIcon className='text-white w-5 h-5' icon={faInstagram} />
+                                    <a href="https://www.instagram.com/lutf_azn/" target='_blank' rel='noreferrer'><FontAwesomeIcon className='text-white w-5 h-5' icon={faInstagram} /></a>
                                     <FontAwesomeIcon className='text-white w-5 h-5' icon={faLinkedin} />
-                                    <FontAwesomeIcon className='text-white w-5 h-5' icon={faGithub} />
+                                    <a href="https://github.com/mlutfiazizan13" target='_blank' rel='noreferrer'><FontAwesomeIcon className='text-white w-5 h-5' icon={faGithub} /></a>
                                     <FontAwesomeIcon className='text-white w-5 h-5' icon={faDiscord} />
                                     
                                 </div>
