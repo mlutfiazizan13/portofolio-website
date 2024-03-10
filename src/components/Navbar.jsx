@@ -37,13 +37,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to={"/services"}
-              className="border-b-2 border-b-transparent hover:border-[#323443]"
-            >
-              Services
-            </Link>
-            <Link
-              to={"/services"}
+              to={"/projects"}
               className="border-b-2 border-b-transparent hover:border-[#323443]"
             >
               Projects

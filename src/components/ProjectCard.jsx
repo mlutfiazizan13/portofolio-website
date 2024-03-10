@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-const PortofolioCard = (props) => {
+const ProjectCard = (props) => {
   return (
     <Link
-      to={"/portofolio/" + props.slug}
+      to={"/project/" + props.slug}
       id={props.id}
       className="overflow-hidden"
     >
@@ -31,4 +31,4 @@ const PortofolioCard = (props) => {
   );
 };
 
-export default PortofolioCard;
+export default ProjectCard;

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { getPortofolios } from "../services/Service";
-import PortofolioCard from "../components/PortofolioCard";
+import { getProjects } from "../services/Service";
+import ProjectCard from "../components/ProjectCard";
 
-const PortofolioContainer = () => {
+const ProjectContainer = () => {
 
     const [data, setData] = useState([]);
 
     async function fetchData(){
         try {
-            const result = await getPortofolios();
+            const result = await getProjects();
             // console.log(result.data.data[0].technology);
             setData(result.data.data);
         } catch (error) {
@@ -27,7 +27,7 @@ const PortofolioContainer = () => {
             {data ? (
                  <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center gap-10">
                     {data.map(({id,slug, name, teaserDesc , desc, image, technology}) => {
-                        return <PortofolioCard key={id} id={id} name={name} slug={slug} teaserDesc={teaserDesc} desc={desc} image={image} technology={technology}/>
+                        return <ProjectCard key={id} id={id} name={name} slug={slug} teaserDesc={teaserDesc} desc={desc} image={image} technology={technology}/>
                     })}
                 </div>
             ) : (
@@ -39,4 +39,4 @@ const PortofolioContainer = () => {
      );
 }
  
-export default PortofolioContainer;
+export default ProjectContainer;

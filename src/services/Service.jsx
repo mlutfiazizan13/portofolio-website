@@ -9,18 +9,18 @@ export const getTechnologies = async () => {
     }
 }
 
-export const getPortofolios = async () => {
+export const getProjects = async () => {
     try {
-        const response = await axios.get("/datasources/portofolios.json");
+        const response = await axios.get("/datasources/projects.json");
         return response;
     } catch (error) {
         throw error;
     }
 }
 
-export const getPortofoliosBySlug = async (slug) => {
+export const getProjectBySlug = async (slug) => {
     try {
-        const response = await axios.get("/datasources/portofolios.json");
+        const response = await axios.get("/datasources/projects.json");
         const data = response.data.data;
         // return data;
         return  data.filter(function (el) {

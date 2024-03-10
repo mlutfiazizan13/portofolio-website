@@ -9,8 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAndroid } from "@fortawesome/free-brands-svg-icons";
 
 import TechnologyContainer from "../../containers/TechnologyContainer";
-import PortofolioContainer from "../../containers/ProjectContainer";
+import ProjectContainer from "../../containers/ProjectContainer";
 import Line from "../../components/Line";
+import ContactSection from "../../containers/ContactSection";
 
 class Home extends Component {
   state = {};
@@ -135,8 +136,10 @@ class Home extends Component {
           <Line text="Recent Project"></Line>
 
           <section className="pb-10 pt-14">
-            <PortofolioContainer></PortofolioContainer>
+            <ProjectContainer></ProjectContainer>
           </section>
+
+          <ContactSection></ContactSection>
         </div>
       </>
     );

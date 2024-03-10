@@ -1,9 +1,9 @@
 import MainLayout from './layouts/MainLayout';
 import AboutMe from './pages/about-me/AboutMe';
 import Home from './pages/home/Home';
-import PortofolioDetail from './pages/projects/ProjectDetail';
-import Services from './pages/services/Services';
+import ProjectDetail from './pages/projects/ProjectDetail';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Projects from './pages/projects/Projects';
 
 function App() {
   const router = createBrowserRouter([
@@ -15,15 +15,16 @@ function App() {
           element: <Home />
         },
         {
-          path:'/portofolio/:name',
-          element: <PortofolioDetail />
+          path:'/project/:name',
+          element: <ProjectDetail />
         },
         {
           path:'/about-me',
           element: <AboutMe />
-        }, {
-          path: '/services',
-          element: <Services />
+        }, 
+        {
+          path: '/projects',
+          element: <Projects />
         }
       ]
     }

@@ -1,4 +1,4 @@
-const Line = (props) => {
+const LineTextOnSide = (props) => {
   return (
     <div className="relative flex h-[30px] items-center">
       <div className="relative h-[1px] w-full bg-black"></div>
@@ -12,4 +12,4 @@ const Line = (props) => {
   );
 };
 
-export default Line;
+export default LineTextOnSide;
