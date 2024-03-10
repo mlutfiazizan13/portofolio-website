@@ -4,15 +4,16 @@
     "data": [
         {
             "id": 1,
-            "name": "Personal Website",
-            "slug": "personal-website",
+            "name": "Yorunify°",
+            "slug": "yorunify",
+            "teaserDesc": "Yorunify° is an web based application that i build using create react application",
             "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, quasi.",
-            "image": "/assets/images/porto.png",
+            "image": "/assets/project/yorunify/yorunify-main.png",
             "technology": [
                 {
                     "id": 1,
-                    "name": "Laravel",
-                    "image": "/assets/images/laravel.png"
+                    "name": "React",
+                    "image": "/assets/images/react.png"
                 },
                 {
                     "id": 2,

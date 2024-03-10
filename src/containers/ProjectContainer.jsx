@@ -25,9 +25,9 @@ const PortofolioContainer = () => {
     return ( 
         <>
             {data ? (
-                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center gap-10">
-                    {data.map(({id,slug, name, desc, image, technology}) => {
-                        return <PortofolioCard key={id} id={id} name={name} slug={slug} desc={desc} image={image} technology={technology}/>
+                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center gap-10">
+                    {data.map(({id,slug, name, teaserDesc , desc, image, technology}) => {
+                        return <PortofolioCard key={id} id={id} name={name} slug={slug} teaserDesc={teaserDesc} desc={desc} image={image} technology={technology}/>
                     })}
                 </div>
             ) : (

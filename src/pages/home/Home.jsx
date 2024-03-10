@@ -1,112 +1,146 @@
 import { Component } from "react";
-import  PersonalImg  from "../../assets/images/personal-img.jpg"
-import { faDownload, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import PersonalImg from "../../assets/images/personal-img.jpg";
+import {
+  faArrowDown,
+  faGlobe,
+  faQuoteLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAndroid } from "@fortawesome/free-brands-svg-icons";
 
 import TechnologyContainer from "../../containers/TechnologyContainer";
-import PortofolioContainer from "../../containers/PortofolioContainer";
-
-
-
-
+import PortofolioContainer from "../../containers/ProjectContainer";
+import Line from "../../components/Line";
 
 class Home extends Component {
-    state = {  } 
-    render() { 
-        return (
-            <>
-                <div className="h-screen md:h-[700px] lg:h-full bg-[#272727] relative">
-                    <div className="lg:grid lg:grid-cols-2 lg:relative">
+  state = {};
+  render() {
+    return (
+      <>
+        <div
+          id="container"
+          className="w-full overflow-hidden px-5 lg:pl-[5%] xl:pl-[15%] lg:pr-[calc(5%+90px)] xl:pr-[calc(15%+90px)]"
+        >
+          <section id="main-banner" className="h-[calc(100vh-90px)]">
+            <div className="flex h-full flex-col items-center justify-between text-black">
+              <div className="relative">
+                <div
+                  after=""
+                  className="h-[130px] w-[1px] bg-[#2021241a] after:absolute after:bottom-0 after:left-1/2 after:h-3 after:w-3 after:-translate-x-1/2 after:rounded-full after:bg-[#323443] after:content-[attr(after)]"
+                ></div>
+              </div>
+              <div className="text-center">
+                <div className="mb-12">
+                  <p className="text-base font-medium uppercase tracking-wider">
+                    Hello! My Name Is
+                  </p>
+                </div>
+                <div className="mb-12 text-center">
+                  <p className="text-6xl md:text-8xl font-bold">Muhamad</p>
+                  <p className="text-6xl md:text-8xl font-bold">Lutfi Azizan</p>
+                </div>
+                <div className="mb-12">
+                  <p className="text-base font-medium uppercase tracking-wider">
+                    Fullstack Web Developer
+                  </p>
+                </div>
+              </div>
 
-                        <div className="text-white px-5 h-[500px] sm:px-14 xl:px-32">
-                            <div className="absolute top-1/2 transform -translate-y-1/2">
-                                <p className="text-7xl font-bold">Hello!</p>
-                                <p className="text-7xl font-bold">I'm Muhamad Lutfi Azizan</p>
-                                
-                                <div className="mt-3">
-                                    <p>I’am a fulltime web developer based in Indonesia <br /> who loves to craft attractive design <br /> experiences for the web.</p>
+              <a
+                href="#about-me"
+                className="h-[220px] rounded-t-full bg-[#2021241a] px-10 pt-11"
+              >
+                <div className="flex h-[90px] w-[90px] items-center justify-center rounded-full bg-[#323443] text-3xl text-white">
+                  <FontAwesomeIcon
+                    icon={faArrowDown}
+                    className="animate-bounce"
+                  ></FontAwesomeIcon>
+                </div>
+              </a>
+              {/* <div className="mt-3">
                                     <div className="flex gap-4 mt-3 font-bold">
                                         <a href="-" className="px-5 py-2 bg-white text-[#272727]">Email Me</a>
                                         <a href="-" className="px-5 py-2"> <FontAwesomeIcon className="mr-2" icon={faDownload} /> Download CV</a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="hidden lg:block">
-                            {/* <img className="h-full w-full" src={PersonalImg} alt="" /> */}
-                        </div>
-                    </div>
+                                </div> */}
+            </div>
+          </section>
+
+          <section id="about-me" className="scroll-mt-[90px] pb-20">
+            <div className="flex flex-col items-center justify-end text-black">
+              <div className="mb-20 h-[200px] rounded-b-full bg-[#2021241a] px-10 pt-11">
+                <div className="flex h-[90px] w-[90px] items-center justify-center overflow-hidden rounded-full bg-[#323443] text-2xl text-white">
+                  <img src={PersonalImg} alt="muhamad-lutfi-azizan" />
                 </div>
-
-
-
-                <div className="px-5 sm:px-14 xl:px-32 pb-10 pt-5 bg-[#272727]"> 
-                    <div className="inline-block relative mb-10 md:mb-20 text-white">
-                        <div className="absolute bg-white w-9 h-1 -top-3 -left-3"></div>
-                        <div className="absolute bg-white w-1 h-9 -top-3 -left-3"></div>
-
-                        <p className="font-semibold">SKILLS</p>
-                        <p className="text-4xl font-bold">Technology</p>
-                        <div className="absolute bg-white w-28 h-1 -right-10"></div>
-                    </div>
-
-                    <TechnologyContainer></TechnologyContainer>
-
+              </div>
+              <div className="flex flex-col items-center gap-5 px-5 md:px-20 2xl:px-60 text-center">
+                <p className="text-4xl font-medium">
+                  Hello! My name is Lutfi, <br /> I'm a Fullstack Web Developer
+                  based in Indonesia
+                </p>
+                <div className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#323443] text-xl text-white">
+                  <FontAwesomeIcon icon={faQuoteLeft}></FontAwesomeIcon>
                 </div>
+                <p className="opacity-50">
+                  I am a fullstack web developer, with 2,5 years experience.
+                  Proven ability to develop, test application, and collaborate
+                  in a team. I'm eager to learn, grow and improve my skills. I'm
+                  also a tech enthusiast, i love to learn tech related thing. I
+                  aim to be more skilled in software engineering and deliver
+                  impactful stuff to my customers.
+                </p>
+              </div>
+            </div>
+          </section>
 
+          <Line text="Services"></Line>
 
-                <div className="px-5 sm:px-14 xl:px-32 py-10 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <div className="self-center text-white">
-                        <div className="inline-block relative mb-5">
-                            <div className="absolute bg-white w-9 h-1 -top-3 -left-3"></div>
-                            <div className="absolute bg-white w-1 h-9 -top-3 -left-3"></div>
-                            <p className="font-semibold">SERVICES</p>
-                            <p className="text-4xl font-bold">Specialized In</p>
-                            <div className="absolute bg-white w-28 h-1 -right-10"></div>
-                        </div>
-                        <div className="text-justify text-lg">
-                            I specialized website and native android development
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
-
-                        <div className="bg-[#323443] h-full px-10 py-6 rounded-xl">
-                            <FontAwesomeIcon className="bg-[#272727] text-white p-3 h-7 w-7 mb-1" icon={faGlobe} />
-                            <div className="text-white">
-                                <p className="font-bold text-lg mb-2">Web Development</p>
-                                <p className="opacity-75">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, quasi.</p>
-                            </div>
-                        </div>
-                        <div className="bg-[#323443] h-full px-10 py-6 rounded-xl">
-                            <FontAwesomeIcon className="bg-[#272727] text-white p-3 h-7 w-7 mb-1" icon={faAndroid} />
-                            <div className="text-white">
-                                <p className="font-bold text-lg mb-2">Native Android Development</p>
-                                <p className="opacity-75">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, quasi.</p>
-                            </div>
-                        </div>
-                    </div>
+          <section className="pb-20 pt-20">
+            <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-2">
+              <div className="h-full px-10 py-6 text-center">
+                <FontAwesomeIcon
+                  className="mb-1 h-7 w-7 rounded-full bg-[#272727] p-3 text-white"
+                  icon={faGlobe}
+                />
+                <div className="text-black">
+                  <p className="mb-2 text-lg font-bold">Web Development</p>
+                  <p className="opacity-75">
+                    Unlock the Power of Your Online Presence with Our Web Development Solutions. Building Your Digital Dreams, Pixel by Pixel, Code by Code!
+                  </p>
                 </div>
-
-
-                <div className="px-5 sm:px-14 xl:px-32 py-10 md:py-20 bg-[#272727]">
-                    <div className="inline-block relative mb-10 md:mb-20 text-white">
-                            <div className="absolute bg-white w-9 h-1 -top-3 -left-3"></div>
-                            <div className="absolute bg-white w-1 h-9 -top-3 -left-3"></div>
-
-                            <p className="font-semibold">RECENT PROJECTS</p>
-                            <p className="text-4xl font-bold">Featured Portofolios</p>
-                            <div className="absolute bg-white w-28 h-1 -right-10"></div>
-                    </div>
-
-                    <PortofolioContainer></PortofolioContainer>
-
-
+              </div>
+              <div className="h-full px-10 py-6 text-center">
+                <FontAwesomeIcon
+                  className="mb-1 h-7 w-7 rounded-full bg-[#272727] p-3 text-white"
+                  icon={faAndroid}
+                />
+                <div className="text-black">
+                  <p className="mb-2 text-lg font-bold">
+                    Native Android Development
+                  </p>
+                  <p className="opacity-75">
+                    Unleash the Power of Native Android Development with Our Expertise. Creating Android Apps that Inspire, Innovate, and Influence!
+                  </p>
                 </div>
-            </>
-        );
-    }
+              </div>
+            </div>
+          </section>
+
+          <Line text="Skills"></Line>
+
+          <section className="pb-10 pt-14">
+            <TechnologyContainer></TechnologyContainer>
+          </section>
+
+          <Line text="Recent Project"></Line>
+
+          <section className="pb-10 pt-14">
+            <PortofolioContainer></PortofolioContainer>
+          </section>
+        </div>
+      </>
+    );
+  }
 }
- 
+
 export default Home;

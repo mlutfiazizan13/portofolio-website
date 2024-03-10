@@ -1,24 +1,34 @@
 import { Link } from "react-router-dom";
 
 const PortofolioCard = (props) => {
-    return ( 
-        
-        <Link to={'/portofolio/'+props.slug} id={props.id} className="bg-[#323443] overflow-hidden rounded-xl">
-            <img src={props.image} alt="" />
-            <div className="px-10 py-6 text-white">
-                <p className=" text-xl font-bold mb-2">{props.name}</p>
-                <p className=" text-sm mb-3 opacity-75">{props.desc}</p>
+  return (
+    <Link
+      to={"/portofolio/" + props.slug}
+      id={props.id}
+      className="overflow-hidden"
+    >
+      <img src={props.image} alt={`${props.name}`} />
+      <div className="py-6 text-black">
+        <p className="mb-2 text-xl font-bold">{props.name}</p>
+        <p className="mb-3 text-sm opacity-75">{props.teaserDesc}</p>
 
-                <div className="flex gap-3">
-                    {/* {console.log(props.technology)} */}
-                    
-                    {props.technology.map(({id, name, image}) => {
-                        return <img key={id} id={id} className="bg-[#272727] text-white p-2 w-10 h-10 rounded-xl" src={image} alt={name} />
-                    })}
-                </div>
-            </div>
-        </Link>
-     );
-}
- 
+        <div className="flex gap-3">
+          {/* {console.log(props.technology)} */}
+
+          {props.technology.map(({ id, name, image }) => {
+            return (
+              <div
+                key={id}
+                className="h-11 w-11  rounded-full bg-[#2021241a] text-black"
+              >
+                <img id={id} className="p-2" src={image} alt={name} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </Link>
+  );
+};
+
 export default PortofolioCard;

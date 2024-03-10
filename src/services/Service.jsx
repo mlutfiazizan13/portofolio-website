@@ -24,7 +24,7 @@ export const getPortofoliosBySlug = async (slug) => {
         const data = response.data.data;
         // return data;
         return  data.filter(function (el) {
-            return el.slug == slug;
+            return el.slug === slug;
         })[0];
     } catch (error) {
         throw error;

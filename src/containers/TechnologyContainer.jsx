@@ -25,7 +25,7 @@ const TechnologyContainer = () => {
     return ( 
         <>
             {data ? (
-                 <div className="grid grid-cols-2 lg:grid-cols-4 items-center gap-5">
+                 <div className="grid grid-cols-2 lg:grid-cols-3 items-center gap-5">
                     {data.map(({id, name, type, image}) => {
                         return <TechnologyCard key={id} id={id} name={name} type={type} image={image}/>
                     })}
