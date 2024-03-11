@@ -67,7 +67,15 @@ const Navbar = () => {
                 icon={faInstagram}
               />
             </a>
-            <FontAwesomeIcon className="h-5 w-5 text-white" icon={faLinkedin} />
+
+            <a
+              href="https://www.linkedin.com/in/muhamad-lutfi-azizan/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon className="h-5 w-5 text-white" icon={faLinkedin} />
+            </a>
+            
             <a
               href="https://github.com/mlutfiazizan13"
               target="_blank"
@@ -75,7 +83,7 @@ const Navbar = () => {
             >
               <FontAwesomeIcon className="h-5 w-5 text-white" icon={faGithub} />
             </a>
-            <FontAwesomeIcon className="h-5 w-5 text-white" icon={faDiscord} />
+            {/* <FontAwesomeIcon className="h-5 w-5 text-white" icon={faDiscord} /> */}
           </div>
         </div>
       </div>

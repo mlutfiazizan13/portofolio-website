@@ -22,6 +22,11 @@ class Home extends Component {
 
   scrollToAbout = () => this.aboutRef.current.scrollIntoView({behavior: "smooth"})
 
+  componentDidMount() {
+    document.title = "Home - Lutfi°"; 
+ }
+  
+
   render() {
     return (
       <>

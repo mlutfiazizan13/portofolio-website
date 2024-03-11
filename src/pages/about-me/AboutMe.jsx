@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import Line from "../../components/Line";
 import ContactSection from "../../containers/ContactSection";
 import TechnologyContainer from "../../containers/TechnologyContainer";
 
 const AboutMe = () => {
+
+
+    useEffect(() => {
+        document.title = 'About Me - Lutfi°';
+    }, []);
 
   return (
       <div

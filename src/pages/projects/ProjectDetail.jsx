@@ -25,6 +25,7 @@ const ProjectDetail = () => {
         setSimilarProject(result2);
 
         setLoading(false);
+        return result;
         } catch (error) {
         console.log("Error fetching data:", error);
         }
@@ -41,7 +42,15 @@ const ProjectDetail = () => {
     };
 
   useEffect(() => {
-    fetchData();
+    
+    fetchData().then((result) => {
+        document.title = `${result.name} - Lutfi°`;
+    });
+
+   
+
+   
+
   }, []);
 
   return (

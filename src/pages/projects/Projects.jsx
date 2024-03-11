@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import ProjectContainer from "../../containers/ProjectContainer";
 
 const Projects = () => {
+
+  useEffect(() => {
+      document.title = 'Projects - Lutfi°';
+  }, []);
   return (
       <div
           id="container"
