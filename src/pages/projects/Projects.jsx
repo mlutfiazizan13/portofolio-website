@@ -1,3 +1,4 @@
+import ProjectContainer from "../../containers/ProjectContainer";
 
 const Projects = () => {
   return (
@@ -5,7 +6,7 @@ const Projects = () => {
           id="container"
           className="w-full overflow-hidden px-5 lg:pl-[5%] xl:pl-[15%] lg:pr-[calc(5%+90px)] xl:pr-[calc(15%+90px)] pb-20"
       >
-          <section id="main-banner" className="">
+          <section id="main-banner" className="pb-20">
             <div className="flex h-full flex-col items-center gap-5 text-black">
               <div className="relative">
                 <div
@@ -17,14 +18,16 @@ const Projects = () => {
                 <div className="mb-12 text-center">
                   <p className="text-6xl md:text-8xl font-bold">Projects</p>
                 </div>
+                <p className="text-xl">Empowering Innovation, Connecting Futures.</p>
               </div>
 
             </div>
           </section>
 
-          <section className="text-center mb-20">
-            <p className="text-xl">I am a fullstack web developer, with 2,5 years experience. Proven ability to develop, test application, and collaborate in a team. I'm eager to learn, grow and improve my skills. I'm also a tech enthusiast, i love to learn tech related thing. I aim to be more skilled in software engineering and deliver impactful stuff to my customers.</p>
+          <section className="mb-20">
+            <ProjectContainer classes="grid grid-cols-1 lg:grid-cols-2  gap-10 auto-cols-max"></ProjectContainer>
           </section>
+          
 
       </div>
   );

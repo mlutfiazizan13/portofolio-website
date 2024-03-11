@@ -1,29 +1,9 @@
-import { useEffect, useState } from "react";
 import Line from "../../components/Line";
-import { getTechnologies } from "../../services/Service";
-import TechnologyCard from "../../components/TechnologyCard";
 import ContactSection from "../../containers/ContactSection";
+import TechnologyContainer from "../../containers/TechnologyContainer";
 
 const AboutMe = () => {
 
-    const [data, setData] = useState([]);
-    const [isLoading, setLoading] = useState(true);
-
-    async function fetchData(){
-        try {
-            const result = await getTechnologies();
-            // console.log(result.data);
-            setData(result.data.data);
-            setLoading(false);
-        } catch (error) {
-            console.log('Error fetching data:', error);
-        }
-    }
-
-
-    useEffect(() => {
-        fetchData();
-    }, []);
   return (
       <div
           id="container"
@@ -54,15 +34,7 @@ const AboutMe = () => {
             <div>
                 <Line text="Skills"></Line>
 
-                {isLoading ?  
-                    <p>Loading</p> 
-                    :
-                    <div className="grid grid-cols-2">
-                        {data.map(({id, name, type, image}) => {
-                            return <TechnologyCard key={id} id={id} name={name} type={type} image={image}/>
-                        })}
-                    </div>
-                }
+                <TechnologyContainer classes="grid grid-cols-2 items-center gap-5"></TechnologyContainer>
 
             </div>
 
@@ -141,6 +113,8 @@ const AboutMe = () => {
 
             </div>
           </section>
+
+
 
           <ContactSection></ContactSection>
       </div>

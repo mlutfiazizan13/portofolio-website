@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import PersonalImg from "../../assets/images/personal-img.jpg";
 import {
   faArrowDown,
@@ -14,7 +14,14 @@ import Line from "../../components/Line";
 import ContactSection from "../../containers/ContactSection";
 
 class Home extends Component {
+  constructor(props) {
+    super(props)
+    this.aboutRef = React.createRef()
+  }
   state = {};
+
+  scrollToAbout = () => this.aboutRef.current.scrollIntoView({behavior: "smooth"})
+
   render() {
     return (
       <>
@@ -47,7 +54,7 @@ class Home extends Component {
                 </div>
               </div>
 
-              <a
+              <div onClick={this.scrollToAbout}
                 href="#about-me"
                 className="h-[220px] rounded-t-full bg-[#2021241a] px-10 pt-11"
               >
@@ -57,7 +64,7 @@ class Home extends Component {
                     className="animate-bounce"
                   ></FontAwesomeIcon>
                 </div>
-              </a>
+              </div>
               {/* <div className="mt-3">
                                     <div className="flex gap-4 mt-3 font-bold">
                                         <a href="-" className="px-5 py-2 bg-white text-[#272727]">Email Me</a>
@@ -67,7 +74,7 @@ class Home extends Component {
             </div>
           </section>
 
-          <section id="about-me" className="scroll-mt-[90px] pb-20">
+          <section ref={this.aboutRef} id="about-me" className="scroll-mt-[90px] pb-20">
             <div className="flex flex-col items-center justify-end text-black">
               <div className="mb-20 h-[200px] rounded-b-full bg-[#2021241a] px-10 pt-11">
                 <div className="flex h-[90px] w-[90px] items-center justify-center overflow-hidden rounded-full bg-[#323443] text-2xl text-white">

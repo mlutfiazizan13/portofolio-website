@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { getProjects } from "../services/Service";
 import ProjectCard from "../components/ProjectCard";
 
-const ProjectContainer = () => {
-
+const ProjectContainer = ({
+    classes = "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10",
+    projectList
+}) => {
     const [data, setData] = useState([]);
 
     async function fetchData(){
@@ -16,25 +18,37 @@ const ProjectContainer = () => {
         }
     }
 
-
     useEffect(() => {
-        fetchData();
+        if (projectList == null) fetchData(); 
     }, []);
-
 
     return ( 
         <>
-            {data ? (
-                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center gap-10">
-                    {data.map(({id,slug, name, teaserDesc , desc, image, technology}) => {
-                        return <ProjectCard key={id} id={id} name={name} slug={slug} teaserDesc={teaserDesc} desc={desc} image={image} technology={technology}/>
+            {
+                projectList == null ? 
+                    data ? (
+                            <div className={classes}>
+                            {data.map(({id,slug, name, teaserDesc , desc, image, technology, type}) => {
+                                return <ProjectCard key={id} id={id} name={name} slug={slug} teaserDesc={teaserDesc} desc={desc} image={image} technology={technology} type={type}/>
+                            })}
+                        </div>
+                    ) : (
+                        <div>
+                            <p>Loading</p>
+                        </div>
+                    )
+
+               : 
+                <div className={classes}>
+                    {projectList.map(({id,slug, name, teaserDesc , desc, image, technology, type}) => {
+                        return <ProjectCard key={id} id={id} name={name} slug={slug} teaserDesc={teaserDesc} desc={desc} image={image} technology={technology} type={type}/>
                     })}
                 </div>
-            ) : (
-                <div>
-                    <p>Loading</p>
-                </div>
-            )}
+               
+
+            }
+
+
         </>
      );
 }

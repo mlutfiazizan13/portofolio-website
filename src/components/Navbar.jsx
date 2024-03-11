@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useLocation,Link } from "react-router-dom";
 import NavbarMobile from "./NavbarMobile";
 import icon from "../assets/images/lutfi-icon-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +11,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Navbar = () => {
+
+  const currentLocation = useLocation();
+
   return (
     <>
       <div id="desktop-navbar" className="relative hidden lg:block ">
@@ -24,32 +27,32 @@ const Navbar = () => {
           <div className="text- flex h-full items-center justify-center gap-10 font-medium uppercase text-white">
             <Link
               to={"/"}
-              className="border-b-2 border-b-transparent hover:border-[#323443]"
+              className={`border-b-2 ${currentLocation.pathname === "/" ? 'border-b-[#323443]' : 'border-b-transparent'} hover:border-[#323443]`}
             >
               Home
             </Link>
 
             <Link
               to={"/about-me"}
-              className="border-b-2 border-b-transparent hover:border-[#323443]"
+              className={`border-b-2 ${currentLocation.pathname === "/about-me" ? 'border-b-[#323443]' : 'border-b-transparent'} hover:border-[#323443]`}
             >
               About Me
             </Link>
 
             <Link
               to={"/projects"}
-              className="border-b-2 border-b-transparent hover:border-[#323443]"
+              className={`border-b-2 ${currentLocation.pathname === '/projects' ? 'border-b-[#323443]' : 'border-b-transparent'} hover:border-[#323443]`}
             >
               Projects
             </Link>
           </div>
 
-          <Link
-            to={"/"}
+          <a
+            href="mailto:mlutfiazizan@gmail.com" target="_blank" rel="noreferrer" 
             className="flex h-[90px] w-[90px] items-center justify-center bg-[#323443] text-3xl text-white"
           >
             <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
-          </Link>
+          </a>
         </div>
 
         <div className="fixed top-0 z-20 h-screen w-[90px] bg-black border-r-[0.1px] border-gray-700">

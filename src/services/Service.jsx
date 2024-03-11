@@ -30,3 +30,16 @@ export const getProjectBySlug = async (slug) => {
         throw error;
     }
 }
+
+export const getProjectByTypeExceptId = async (type, id) => {
+    try {
+        const response = await axios.get("/datasources/projects.json");
+        const data = response.data.data;
+        // return data;
+        return  data.filter(function (el) {
+            return el.type === type && el.id !== id;
+        });
+    } catch (error) {
+        throw error;
+    }
+}

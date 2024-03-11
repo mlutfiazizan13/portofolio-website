@@ -1,3 +1,5 @@
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const ProjectCard = (props) => {
@@ -5,15 +7,20 @@ const ProjectCard = (props) => {
     <Link
       to={"/project/" + props.slug}
       id={props.id}
-      className="overflow-hidden"
+      className=""
     >
-      <img src={props.image} alt={`${props.name}`} />
-      <div className="py-6 text-black">
-        <p className="mb-2 text-xl font-bold">{props.name}</p>
-        <p className="mb-3 text-sm opacity-75">{props.teaserDesc}</p>
+      <div className="relative overflow-hidden h-[350px] w-full">
+          <img className="absolute top-0 left-0 w-full h-full object-cover object-center scale-100 hover:scale-110 duration-200" 
+            src={props.image} alt={`${props.name}`} />
+      </div>
+      <p className="pt-5 pb-1 uppercase text-sm font-bold opacity-50">{props.type}</p>
+      <div className="flex justify-between items-center text-black gap-2">
+        <p className="text-3xl font-bold">{props.name}</p>
+        <div className="bg-[#323443] flex justify-center items-center text-lg text-white h-[40px] w-[40px] rounded-full scale-100 hover:scale-110 duration-200">
+            <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+        </div>
 
-        <div className="flex gap-3">
-          {/* {console.log(props.technology)} */}
+        {/* <div className="flex gap-3">
 
           {props.technology.map(({ id, name, image }) => {
             return (
@@ -25,7 +32,7 @@ const ProjectCard = (props) => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </Link>
   );
