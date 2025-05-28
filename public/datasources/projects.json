@@ -78,6 +78,31 @@
                     "image": "/assets/project/personal-website/2.png"
                 }
             ]
+        },
+
+        {
+            "id": 3,
+            "name": "Resume Parser & Summarizer",
+            "slug": "resume-parser-summarizer",
+            "teaserDesc": "This application is a resume analysis tool built with Quarkus, designed to parse PDF resumes and generate intelligent summaries using Large Language Models (LLMs) via Ollama.",
+            "desc": "This application is a resume analysis tool built with Quarkus, designed to parse PDF resumes and generate intelligent summaries using Large Language Models (LLMs) via Ollama. It automates the extraction of key information such as personal details, education, work experience, and skills from uploaded PDF files. Leveraging the power of LLMs, the system then produces concise, human-readable summaries tailored for quick HR screening or candidate profiling.",
+            "image": "/assets/project/resume-parser-summarizer/main.png",
+            "date": "2025-05-29",
+            "type": "Portofolio",
+            "client": "Personal Portofolio",
+            "repositoryLink": "https://github.com/mlutfiazizan13/simple-resume-parser",
+            "technology": [
+                {
+                    "id": 1,
+                    "name": "Quarkus"
+                },
+                {
+                    "id": 2,
+                    "name": "Ollama"
+                }
+            ],
+            "images": [
+            ]
         }
     ]
 }

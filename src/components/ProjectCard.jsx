@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ProjectCard = (props) => {
   return (
     <Link
-      to={"/project/" + props.slug}
+      to={`/projects/${props.slug}`}
       id={props.id}
       className=""
     >

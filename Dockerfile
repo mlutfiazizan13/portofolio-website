@@ -1,9 +1,4 @@
-FROM node:16.20.2
+FROM nginx:latest
 
-WORKDIR /usr/app
+COPY build /usr/share/nginx/html
 
-COPY ./package.json ./
-RUN npm install
-COPY ./ ./
-
-CMD ["npm", "start"]

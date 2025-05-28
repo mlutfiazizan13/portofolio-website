@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { getProjectBySlug, getProjectByTypeExceptId } from "../../services/Service";
 import Line from "../../components/Line";
 import ContactSection from "../../containers/ContactSection";
@@ -13,6 +13,8 @@ const ProjectDetail = () => {
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(true);
     const [similarProject, setSimilarProject] = useState([]);
+    const location = useLocation();
+
 
     let { name } = useParams();
 
@@ -42,22 +44,23 @@ const ProjectDetail = () => {
     };
 
   useEffect(() => {
+
     
     fetchData().then((result) => {
         document.title = `${result.name} - Lutfi°`;
     });
 
    
-
    
 
-  }, []);
+  }, [location]);
 
   return (
     <>
         <div
-          id="container"
-          className="w-full overflow-hidden px-5 lg:pl-[5%] xl:pl-[15%] lg:pr-[calc(5%+90px)] xl:pr-[calc(15%+90px)] pb-20"
+            key={data.slug}
+            id="container"
+            className="w-full overflow-hidden px-5 lg:pl-[5%] xl:pl-[15%] lg:pr-[calc(5%+90px)] xl:pr-[calc(15%+90px)] pb-20"
         >
           {isLoading ? (
             <div className="px-5 pb-10 pt-36 sm:px-14 xl:px-32">
@@ -112,7 +115,7 @@ const ProjectDetail = () => {
                             </div>
                             </div>
 
-                            <div className="text-center 2xl:px-60 pb-10 lg:pb-20">
+                            <div className="text-start  pb-10 lg:pb-20">
                             <p className="text-xl">{data.desc}</p>
                         </div>
 
@@ -123,19 +126,38 @@ const ProjectDetail = () => {
 
 
                 <section className="mb-2">
-                    <div className="flex justify-start gap-3">
+                    <table>
+                        <tr>
+                            <td><span className="font-medium">Tech Stacks</span></td>
+                            <td className="pr-1 pl-4">:</td>
+                            <td>{data.technology.map(({ id, name, image }, index) => {
+                                return (<>{name} {data.technology.length - index === 1 ? '' : ', '}</>);
+                                })}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span className="font-medium">Repository</span></td>
+                            <td className="pr-1 pl-4">:</td>
+                            <td><a href="https://github.com/mlutfiazizan13/simple-resume-parser" target="_blank">https://github.com/mlutfiazizan13/simple-resume-parser</a></td>
+                        </tr>
+                    </table>
+                    {/* <div className="flex justify-start gap-3">
                         <span className="font-medium"> Tech Stacks :</span>
                         {data.technology.map(({ id, name, image }, index) => {
-                        return (
-                            <div
-                                key={id}
-                                className=" text-black"
-                                >
-                                {name} {data.technology.length - index === 1 ? '' : ','}
-                            </div>
-                        );
+                            return (
+                                <div
+                                    key={id}
+                                    className=" text-black"
+                                    >
+                                    {name} {data.technology.length - index === 1 ? '' : ','}
+                                </div>
+                            );
                         })}
                     </div>
+                    <div className="flex justify-start gap-3">
+                        <span className="font-medium">Repository :</span>
+                        
+                    </div> */}
                 </section>
 
 

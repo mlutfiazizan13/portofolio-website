@@ -15,7 +15,7 @@ function App() {
           element: <Home />
         },
         {
-          path:'/project/:name',
+          path:'/projects/:name',
           element: <ProjectDetail />
         },
         {
